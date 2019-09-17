@@ -1,25 +1,149 @@
-<h2>CI/CD</h2>
+<br />
+<br />
+<br />
+<br />
+<h2>DevOps (Release and deploy)</h2>
 <h2>
-    <em>Docker</em> - <em>Kubernetes</em> - <em>Helm</em> -
+    <em>Containers</em> - <em>Kubernetes</em> - <em>Helm</em> -
     <em>Jenkins(2/X)</em>
 </h2>
 <style>
     #top {
         background-image: url("images/background.jpg");
         background-size: cover;
-        --color-text: rgb(231, 238, 245);
     }
-    h2 {
-        color: rgb(225, 235, 255);
+</style>
+
+---
+<h2>Containers</h2>
+
+---
+<h2>Containers</h2>
+<h2><em>Docker</em></h2>
+
+---
+<h1>Docker</h1>
+<img src="/images/containers/architecture-docker-components.png" />
+
+---
+<h1>Docker - Containers vs Virtual machines</h1>
+<br /><br /><br />
+<img src="/images/containers/containers-vs-vm.png" />
+<style>
+    img {
+        height: 70%;
+    }
+</style>
+
+---
+<h1>Docker - Layers</h1>
+<img src="/images/containers/container-layers.jpg" />
+<br /><br />
+<style>
+    img {
+        height: 80%;
     }
 </style>
 
 ---
 
-<h1>CI / CD</h1>
+<h1>Containers</h1>
+<h2>What is a <em>container</em>?</h2>
 
-<h2>This is a simple slide</h2>
-<h2>With just <em>text</em></h2>
+---
+
+<h1>Container - Technical</h1>
+
+<h3>Thin wrapper around Linux Container technology.</h3>
+<h3>
+    Leverages 4 functionalities from Linux to provide an isolated environment
+</h3>
+<ul>
+    <li>namespaces - visibility (pid)</li>
+    <li>cgroups - control groups (resources)</li>
+    <li>union filesystem - data</li>
+    <li>seccomp - security profiles</li>
+</ul>
+
+---
+<h1>Containers - nameservers</h1>
+
+<split-view>
+    <div>
+        <br /><br /><br />
+        <h4><em>Creating a isolated process</em></h4>
+        <h4>unshare --fork --pid --mount-proc bash</h4>
+    </div>
+    <web-term path="folder"></web-term>
+</split-view>
+
+---
+<h1>Containers - cgroups (1)</h1>
+
+<split-view>
+    <div>
+        <h4><em>install cgroups libs</em></h4>
+        <h4>apt-get install libcgroup1 cgroup-tools</h4>
+        <h4><em>create an executable file</em></h4>
+        <h4>test.sh</h4>
+    </div>
+
+    <source-code folder="sources" files="test.sh" start-lines="" end-lines="">
+    </source-code>
+</split-view>
+---
+<h1>Containers - cgroups(2) - test.sh</h1>
+
+<split-view>
+    <div>
+        <h4><em>#create a cgroup foo#</em></h4>
+        <h4>cgcreate -g memory:foo</h4>
+        <h4><em>#assign 50000 of memory#</em></h4>
+        <h4>echo 50000 | tee /sys/fs/cgroup/memory/foo/memory.limit_in_bytes</h4>
+        <h4><em>#check the allocation#</em></h4>
+        <h4>cat /sys/fs/cgroup/memory/foo/memory.limit_in_bytes</h4>
+        <h4><em>#execute the process#</em></h4>
+        <h4>cgexec -g memory:foo ./test.sh</h4>
+        <h4><em>#delete the cgroup</em></h4>
+        <h4>cgdelete memory:foo</h4>
+    </div>
+
+    <web-term path="sources"></web-term>
+    </source-code>
+</split-view>
+
+---
+<h1>Containers - Union File Systems (1)</h1>
+<br /><br /><br /><br /><br /><br /><br /><br />
+<img src="/images/containers/overlay_constructs.jpg" />
+
+<style>
+    img {
+        height: 40%;
+    }
+</style>
+
+
+---
+<h1>Containers - Union File Systems (2)</h1>
+
+<split-view>
+    <div>
+        <h4><em>#create 4 folders#</em></h4>
+        <h4>mkdir base diff overlay workdir</h4>
+        <h4><em>#create a base file#</em></h4>
+        <h4>echo "this is my base layer" > base/file1</h4>
+        <h4><em>#create the overlay (new layer)#</em></h4>
+        <h4>mount -t overlay -o lowerdir=base,upperdir=diff,workdir=workdir none overlay</h4>
+        <h4><em>#Umount the overlay#</em></h4>
+        <h4>sudo umount overlay</h4>
+        <h4><em>#remoe all#</em></h4>
+        <h4>rm -Rf base diff overlay workdir</h4>
+    </div>
+
+    <web-term path="/ufiles"></web-term>
+    </source-code>
+</split-view>
 
 ---
 
