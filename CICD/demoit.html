@@ -2,17 +2,11 @@
 <br />
 <br />
 <br />
-<h2>DevOps (Release and deploy)</h2>
+<h2>/* DevOps (Release and deploy) */</h2>
 <h2>
     <em>Containers</em> - <em>Kubernetes</em> - <em>Helm</em> -
     <em>Jenkins(2/X)</em>
 </h2>
-<style>
-    #top {
-        background-image: url("images/background.jpg");
-        background-size: cover;
-    }
-</style>
 
 ---
 <h2>Containers</h2>
@@ -58,12 +52,24 @@
 <h3>
     Leverages 4 functionalities from Linux to provide an isolated environment
 </h3>
-<ul>
-    <li>namespaces - visibility (pid)</li>
-    <li>cgroups - control groups (resources)</li>
-    <li>union filesystem - data</li>
-    <li>seccomp - security profiles</li>
-</ul>
+<div>
+    <ul>
+        <li>namespaces - visibility (pid)</li>
+        <li>cgroups - control groups (resources)</li>
+        <li>union filesystem - data</li>
+        <li>seccomp - security profiles</li>
+    </ul>
+</div>
+<style>
+    div{
+        margin-left: auto;
+        margin-right: auto;
+        display: table;
+    }
+    li {
+        text-align: left;
+    }
+</style>
 
 ---
 <h1>Containers - nameservers</h1>
