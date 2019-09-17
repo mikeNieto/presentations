@@ -1,0 +1,103 @@
+<h2>CI/CD</h2>
+<h2>
+    <em>Docker</em> - <em>Kubernetes</em> - <em>Helm</em> -
+    <em>Jenkins(2/X)</em>
+</h2>
+<style>
+    #top {
+        background-image: url("images/background.jpg");
+        background-size: cover;
+        --color-text: rgb(231, 238, 245);
+    }
+    h2 {
+        color: rgb(225, 235, 255);
+    }
+</style>
+
+---
+
+<h1>CI / CD</h1>
+
+<h2>This is a simple slide</h2>
+<h2>With just <em>text</em></h2>
+
+---
+
+<h1>Logos</h1>
+
+<div class="logos">
+    <img src="/images/kubernetes.png" />
+    <img src="/images/kubernetes.png" />
+</div>
+
+---
+
+<h1>Snapshot</h1>
+
+<img src="/images/bazel.png" />
+
+<img id="qr" src="/qrcode?url=https://bazel.build/" />
+
+---
+
+<h1>Terminal</h1>
+
+<split-view>
+    <web-term path="folder"></web-term>
+</split-view>
+
+---
+
+<h1>
+    Shell &amp; Browser -
+    <strong>Type `python -m SimpleHTTPServer` in the shell window</strong>
+</h1>
+
+<split-view>
+    <web-term path="folder"></web-term>
+    <web-browser src="http://"></web-browser>
+</split-view>
+
+---
+<h1>
+    Browser
+</h1>
+
+<split-view>
+    <web-browser
+        src="http://10.101.93.128:8080/job/CICD-backendApp/"
+    ></web-browser>
+</split-view>
+
+---
+<script src="/js/draw.js"></script>
+<h1>Code samples</h1>
+
+<split-view>
+    <web-term path="folder"></web-term>
+    <source-code
+        folder="sources"
+        files="main.go pod.yaml"
+        start-lines="26;18,21"
+        end-lines="27;18,22"
+    >
+    </source-code>
+</split-view>
+
+---
+
+<h1>Draw on slides</h1>
+
+<p>
+    On the left border of the page there's a pen that can be used to draw on the
+    slides. Type <em>&lt;ESC&gt;</em> to exit draw mode.
+</p>
+
+<img src="/images/bazel.png" />
+<script src="/js/draw.js"></script>
+
+<style>
+    img {
+        height: 75%;
+    }
+</style>
