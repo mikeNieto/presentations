@@ -40,7 +40,7 @@ body {
 
 #top {
     position: relative;
-    background-color: #232d4b;
+    background-color: #15232c;
     width: 100%;
     height: calc(100vw * 9 / 16); //16
     overflow: hidden;
@@ -58,7 +58,7 @@ h1 {
     border-radius: 0 8px 8px 0;
     text-transform: none;
     font-weight: normal;
-    color: #dcdcd7;
+    color: #ffc432;
 }
 
 h2,
@@ -118,7 +118,7 @@ split-view {
 
 em {
     font-style: normal;
-    color: rgb(255, 198, 0);
+    color: #ffc432;
 }
 
 #progression {
