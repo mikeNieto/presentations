@@ -118,7 +118,6 @@ h4:first-of-type {
     <web-term path="sources"></web-term>
     </source-code>
 </split-view>
-
 ---
 <h1>Containers - Union File Systems (1)</h1>
 <br /><br /><br /><br /><br /><br /><br /><br />
@@ -149,23 +148,139 @@ h4:first-of-type {
     </div>
 
     <web-term path="/ufiles"></web-term>
-    </source-code>
+</split-view>
+---
+<div>
+    <img src="/images/k8s/Kubernetes_logo.png" />
+</div>
+<style>
+    img{
+        margin-top: 10em;
+        width: 60%;
+        height: 60%;
+    }
+</style>
+---
+<h1>History</h1>
+<img src="/images/k8s/borg-cgroups.png" />
+<style>
+    #top {
+        background-color: white;
+    }
+</style>
+---
+<h1>Whole datacenter as a single deployment platform</h1>
+
+<img id="img" src="/images/k8s/single-deployment.jpg" />
+<style>
+    #top {
+        background-color: white;
+    }
+    #img{
+        margin-top: 5em;
+        width: 80%;
+        height: 65%;
+    }
+</style>
+
+---
+<h1>Components</h1>
+
+<img id="img" src="/images/k8s/k8s-components.jpg" />
+<style>
+    #top {
+        background-color: white;
+    }
+    #img{
+        margin-top: 5em;
+        width: 80%;
+        height: 65%;
+    }
+</style>
+
+---
+<h1>Basic overview</h1>
+
+<img id="img" src="/images/k8s/basic-overview.jpg" />
+<style>
+    #top {
+        background-color: white;
+    }
+    #img{
+        margin-top: 2em;
+        width: 75%;
+        height: 75%;
+    }
+</style>
+
+---
+<h1>Cloud Providers</h1>
+
+<img id="img" src="/images/k8s/cloud-providers.png" />
+<style>
+    #top {
+        background-color: white;
+    }
+    #img{
+        margin-top: 2em;
+        width: 75%;
+        height: 75%;
+    }
+</style>
+
+---
+
+<h1>or Minikube</h1>
+
+<h3>
+        curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+        && chmod +x minikube
+</h3>
+<br/><br/><br/>
+<h3>
+        sudo cp minikube /usr/local/bin && rm minikube
+</h3>
+
+---
+
+<h1>Starting minikube locally -> "minikube start --vm-driver=none"</h1>
+<split-view>
+    <web-term path=""></web-term>
 </split-view>
 
 ---
 
-<h1>Logos</h1>
+<h1>Minikube dashboard -> "kubectl proxy"</h1>
 
-<div class="logos">
-    <img src="/images/test.png" />
-</div>
+<split-view>
+    <web-term path=""></web-term>
+    <web-browser src="http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/http:kubernetes-dashboard:/proxy/"></web-browser>
+</split-view>
 
 ---
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
 <h1>Snapshot</h1>
 
 <img src="/images/bazel.png" />
-
 <img id="qr" src="/qrcode?url=https://bazel.build/" />
 
 ---
