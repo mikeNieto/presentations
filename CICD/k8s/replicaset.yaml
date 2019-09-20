@@ -1,0 +1,17 @@
+apiVersion: apps/v1beta2
+kind: ReplicaSet
+metadata:
+    name: frontapp
+spec:
+    replicas: 3
+    selector:
+        matchLabels:
+            app: frontapp
+    template:
+        metadata:
+            labels:
+                app: frontapp
+        spec:
+            containers:
+                - name: frontapp
+                  image: mikenieto/frontapp:v1

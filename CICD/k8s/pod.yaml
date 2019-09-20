@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: frontapp
+spec:
+    containers:
+        - image: mikenieto/frontapp:v1
+          name: frontapp
+          ports:
+              - containerPort: 8080
+                protocol: TCP
