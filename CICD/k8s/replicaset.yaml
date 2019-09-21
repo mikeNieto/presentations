@@ -1,7 +1,7 @@
 apiVersion: apps/v1beta2
 kind: ReplicaSet
 metadata:
-    name: frontapp
+    name: frontapp-rs
 spec:
     replicas: 3
     selector:

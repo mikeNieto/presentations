@@ -243,7 +243,6 @@ h4:first-of-type {
 </split-view>
 
 ---
-
 <h1>Pod</h1>
 
 <img id="img" src="/images/k8s/pods.png" />
@@ -276,7 +275,18 @@ h4:first-of-type {
     <web-term path="k8s"></web-term>
 </split-view>
 ---
-<h1>Replication</h1>
+<h1>ReplicaSet</h1>
+
+<img id="img" src="/images/k8s/replicaset.png" />
+<style>
+    #img{
+        margin-top: 2em;
+        width: 85%;
+        height: 70%;
+    }
+</style>
+---
+<h1>ReplicaSet (2)</h1>
 <split-view>
     <source-code
             folder="k8s"
@@ -287,16 +297,90 @@ h4:first-of-type {
     <web-term path="k8s"></web-term>
 </split-view>
 ---
-<h1>Replication - recreation</h1>
+<h1>ReplicaSet (3) - Pods recreation</h1>
 <split-view>
     <web-term path="k8s"></web-term>
 </split-view>
 ---
-<h1>Replication - scaling (kubectl scale rs "object" --replicas X)</h1>
+<h1>ReplicaSet (4) - Scaling (kubectl scale rs "object" --replicas X)</h1>
 <split-view>
     <web-term path="k8s"></web-term>
 </split-view>
 
+---
+<h1>Services</h1>
+
+<img id="img" src="/images/k8s/services.jpg" />
+<style>
+    #img{
+        margin-top: 1em;
+        width: 70%;
+        height: 70%;
+    }
+</style>
+---
+<h1>Service (2)</h1>
+<split-view>
+    <source-code
+            folder="k8s"
+            files="service.yaml"
+            start-lines="2,9"
+            end-lines="2,10"
+    ></source-code>
+    <web-term path="k8s"></web-term>
+</split-view>
+---
+<h1>Service (3) - Endpoints</h1>
+<split-view>
+    <web-term path="k8s"></web-term>
+</split-view>
+---
+<h1>Service (4) - Discovering services</h1>
+<split-view>
+        <div>
+            <h4><em>#Create a busybox pod#</em></h4>
+            <h4>kubectl run test-app --image=radial/busyboxplus:curl -i --tty --rm</h4>
+        </div>
+    <web-term path="k8s"></web-term>
+</split-view>
+---
+<h1>Services (5) - Load Balancer</h1>
+<img id="img" src="/images/k8s/load-balancer.jpg" />
+<style>
+    #img{
+        margin-top: 1em;
+        width: 70%;
+        height: 70%;
+    }
+</style>
+
+---
+<h1>Services (6) - Load Balancer yaml</h1>
+<split-view>
+        <source-code
+                folder="k8s"
+                files="service.yaml"
+                start-lines=""
+                end-lines=""
+        ></source-code>
+        <source-code
+                folder="k8s"
+                files="load-balancer.yaml"
+                start-lines="6"
+                end-lines="6"
+        ></source-code>
+</split-view>
+
+---
+<h1>Services (5) - Ingress</h1>
+<img id="img" src="/images/k8s/ingress.jpg" />
+<style>
+    #img{
+        margin-top: 1em;
+        width: 70%;
+        height: 60%;
+    }
+</style>
 
 
 
