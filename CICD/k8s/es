@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: frontapp-deployment
+spec:
+    replicas: 3
+    selector:
+        matchLabels:
+            app: frontapp
+    template:
+        metadata:
+            name: front-application
+            labels:
+                app: frontapp
+        spec:
+            containers:
+                - image: mikenieto/frontapp:v1
+                  name: front-application-image
+                  ports:
+                      - containerPort: 80
+
+

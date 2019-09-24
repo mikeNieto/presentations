@@ -1,7 +1,7 @@
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
-    name: frontapp-rs
+    name: front
 spec:
     replicas: 3
     selector:
@@ -9,9 +9,10 @@ spec:
             app: frontapp
     template:
         metadata:
+            name: front-application
             labels:
                 app: frontapp
         spec:
             containers:
-                - name: frontapp
-                  image: mikenieto/frontapp:v1
+                - image: mikenieto/frontapp:v1
+                  name: front-application-image

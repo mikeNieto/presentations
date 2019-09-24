@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: frontapp
+spec:
+    rules:
+        - host: frontapp.example.com
+          http:
+              paths:
+                  - path: /
+                    backend:
+                        serviceName: frontapp-svc
+                        servicePort: 80

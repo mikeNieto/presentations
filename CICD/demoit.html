@@ -57,7 +57,7 @@
     </ul>
 </div>
 <style>
-    div{
+    div {
         margin-left: auto;
         margin-right: auto;
         display: table;
@@ -73,7 +73,7 @@
 <split-view>
     <div>
         <br /><br /><br />
-        <h4><em>Creating a isolated process</em></h4>
+        <h4><em>#Creating a isolated process#</em></h4>
         <h4>unshare --fork --pid --mount-proc bash</h4>
     </div>
     <web-term path="folder"></web-term>
@@ -84,9 +84,9 @@
 
 <split-view>
     <div>
-        <h4><em>install cgroups libs</em></h4>
+        <h4><em>#install cgroups libs#</em></h4>
         <h4>apt-get install libcgroup1 cgroup-tools</h4>
-        <h4><em>create an executable file</em></h4>
+        <h4><em>#create an executable file#</em></h4>
         <h4>test.sh</h4>
     </div>
 
@@ -94,9 +94,9 @@
     </source-code>
 </split-view>
 <style>
-h4:first-of-type {
-    margin-top: 4vw;
-}
+    h4:first-of-type {
+        margin-top: 4vw;
+    }
 </style>
 ---
 <h1>Containers - cgroups(2) - test.sh</h1>
@@ -106,7 +106,9 @@ h4:first-of-type {
         <h4><em>#create a cgroup foo#</em></h4>
         <h4>cgcreate -g memory:foo</h4>
         <h4><em>#assign 50000 of memory#</em></h4>
-        <h4>echo 50000 | tee /sys/fs/cgroup/memory/foo/memory.limit_in_bytes</h4>
+        <h4>
+            echo 50000 | tee /sys/fs/cgroup/memory/foo/memory.limit_in_bytes
+        </h4>
         <h4><em>#check the allocation#</em></h4>
         <h4>cat /sys/fs/cgroup/memory/foo/memory.limit_in_bytes</h4>
         <h4><em>#execute the process#</em></h4>
@@ -116,7 +118,6 @@ h4:first-of-type {
     </div>
 
     <web-term path="sources"></web-term>
-    </source-code>
 </split-view>
 ---
 <h1>Containers - Union File Systems (1)</h1>
@@ -129,7 +130,6 @@ h4:first-of-type {
     }
 </style>
 
-
 ---
 <h1>Containers - Union File Systems (2)</h1>
 
@@ -140,7 +140,10 @@ h4:first-of-type {
         <h4><em>#create a base file#</em></h4>
         <h4>echo "this is my base layer" > base/file1</h4>
         <h4><em>#create the overlay (new layer)#</em></h4>
-        <h4>mount -t overlay -o lowerdir=base,upperdir=diff,workdir=workdir none overlay</h4>
+        <h4>
+            mount -t overlay -o lowerdir=base,upperdir=diff,workdir=workdir none
+            overlay
+        </h4>
         <h4><em>#Umount the overlay#</em></h4>
         <h4>sudo umount overlay</h4>
         <h4><em>#remoe all#</em></h4>
@@ -154,7 +157,7 @@ h4:first-of-type {
     <img src="/images/k8s/Kubernetes_logo.png" />
 </div>
 <style>
-    img{
+    img {
         margin-top: 10em;
         width: 60%;
         height: 60%;
@@ -169,7 +172,7 @@ h4:first-of-type {
 
 <img id="img" src="/images/k8s/single-deployment.jpg" />
 <style>
-    #img{
+    #img {
         margin-top: 5em;
         width: 80%;
         height: 65%;
@@ -181,7 +184,7 @@ h4:first-of-type {
 
 <img id="img" src="/images/k8s/k8s-components.jpg" />
 <style>
-    #img{
+    #img {
         margin-top: 5em;
         width: 80%;
         height: 65%;
@@ -193,7 +196,7 @@ h4:first-of-type {
 
 <img id="img" src="/images/k8s/basic-overview.jpg" />
 <style>
-    #img{
+    #img {
         margin-top: 2em;
         width: 75%;
         height: 75%;
@@ -205,7 +208,7 @@ h4:first-of-type {
 
 <img id="img" src="/images/k8s/cloud-providers.png" />
 <style>
-    #img{
+    #img {
         background-color: white;
         margin-top: 2em;
         width: 75%;
@@ -218,12 +221,13 @@ h4:first-of-type {
 <h1>or Minikube</h1>
 
 <h3>
-        curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-        && chmod +x minikube
+    curl -Lo minikube
+    https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+    && chmod +x minikube
 </h3>
-<br/><br/><br/>
+<br /><br /><br />
 <h3>
-        sudo cp minikube /usr/local/bin && rm minikube
+    sudo cp minikube /usr/local/bin && rm minikube
 </h3>
 
 ---
@@ -239,7 +243,9 @@ h4:first-of-type {
 
 <split-view>
     <web-term path=""></web-term>
-    <web-browser src="http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/http:kubernetes-dashboard:/proxy/"></web-browser>
+    <web-browser
+        src="http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/http:kubernetes-dashboard:/proxy/"
+    ></web-browser>
 </split-view>
 
 ---
@@ -247,7 +253,7 @@ h4:first-of-type {
 
 <img id="img" src="/images/k8s/pods.png" />
 <style>
-    #img{
+    #img {
         margin-top: 2em;
         width: 85%;
         height: 70%;
@@ -257,20 +263,20 @@ h4:first-of-type {
 <h1>Pod in practice</h1>
 <split-view>
     <source-code
-            folder="k8s"
-            files="app.js Dockerfile pod.yaml"
-            start-lines=";;2,7"
-            end-lines=";;2,8"
+        folder="k8s"
+        files="app.js Dockerfile pod.yaml"
+        start-lines=";;2,7"
+        end-lines=";;2,8"
     ></source-code>
 </split-view>
 ---
 <h1>Running that pod (kubectl create -f "object")</h1>
 <split-view>
     <source-code
-            folder="k8s"
-            files="pod.yaml"
-            start-lines=""
-            end-lines=""
+        folder="k8s"
+        files="pod.yaml"
+        start-lines=""
+        end-lines=""
     ></source-code>
     <web-term path="k8s"></web-term>
 </split-view>
@@ -279,7 +285,7 @@ h4:first-of-type {
 
 <img id="img" src="/images/k8s/replicaset.png" />
 <style>
-    #img{
+    #img {
         margin-top: 2em;
         width: 85%;
         height: 70%;
@@ -289,10 +295,10 @@ h4:first-of-type {
 <h1>ReplicaSet (2)</h1>
 <split-view>
     <source-code
-            folder="k8s"
-            files="replicaset.yaml"
-            start-lines="2,15"
-            end-lines="2,17"
+        folder="k8s"
+        files="replicaset.yaml"
+        start-lines="2,15"
+        end-lines="2,17"
     ></source-code>
     <web-term path="k8s"></web-term>
 </split-view>
@@ -312,7 +318,7 @@ h4:first-of-type {
 
 <img id="img" src="/images/k8s/services.jpg" />
 <style>
-    #img{
+    #img {
         margin-top: 1em;
         width: 70%;
         height: 70%;
@@ -322,10 +328,10 @@ h4:first-of-type {
 <h1>Service (2)</h1>
 <split-view>
     <source-code
-            folder="k8s"
-            files="service.yaml"
-            start-lines="2,9"
-            end-lines="2,10"
+        folder="k8s"
+        files="service.yaml"
+        start-lines="2,9"
+        end-lines="2,10"
     ></source-code>
     <web-term path="k8s"></web-term>
 </split-view>
@@ -337,17 +343,19 @@ h4:first-of-type {
 ---
 <h1>Service (4) - Discovering services</h1>
 <split-view>
-        <div>
-            <h4><em>#Create a busybox pod#</em></h4>
-            <h4>kubectl run test-app --image=radial/busyboxplus:curl -i --tty --rm</h4>
-        </div>
+    <div>
+        <h4><em>#Create a busybox pod#</em></h4>
+        <h4>
+            kubectl run test-app --image=radial/busyboxplus:curl -i --tty --rm
+        </h4>
+    </div>
     <web-term path="k8s"></web-term>
 </split-view>
 ---
 <h1>Services (5) - Load Balancer</h1>
 <img id="img" src="/images/k8s/load-balancer.jpg" />
 <style>
-    #img{
+    #img {
         margin-top: 1em;
         width: 70%;
         height: 70%;
@@ -357,42 +365,184 @@ h4:first-of-type {
 ---
 <h1>Services (6) - Load Balancer yaml</h1>
 <split-view>
-        <source-code
-                folder="k8s"
-                files="service.yaml"
-                start-lines=""
-                end-lines=""
-        ></source-code>
-        <source-code
-                folder="k8s"
-                files="load-balancer.yaml"
-                start-lines="6"
-                end-lines="6"
-        ></source-code>
+    <source-code
+        folder="k8s"
+        files="service.yaml"
+        start-lines=""
+        end-lines=""
+    ></source-code>
+    <source-code
+        folder="k8s"
+        files="load-balancer.yaml"
+        start-lines="6"
+        end-lines="6"
+    ></source-code>
 </split-view>
-
 ---
-<h1>Services (5) - Ingress</h1>
-<img id="img" src="/images/k8s/ingress.jpg" />
+<h1>Services (7) - NodePort</h1>
+<img id="img" src="/images/k8s/nodePort.jpg" />
 <style>
-    #img{
+    #img {
         margin-top: 1em;
         width: 70%;
-        height: 60%;
+        height: 70%;
+    }
+</style>
+---
+<h1>Services (8) - Ingress</h1>
+<img id="img" src="/images/k8s/ingress.jpg" />
+<style>
+    #img {
+        margin-top: 1em;
+        width: 80%;
+        height: 70%;
+    }
+</style>
+---
+<h1>Services (9) - Ingress yaml</h1>
+<split-view>
+    <source-code
+        folder="k8s"
+        files="ingress.yaml"
+        start-lines="7,12"
+        end-lines="7,13"
+    ></source-code>
+</split-view>
+---
+<h1>Deployments</h1>
+
+<img id="img" src="/images/k8s/deployments.png" />
+<style>
+    #img {
+        margin-top: 1em;
+        width: 50%;
+        height: 70%;
+    }
+</style>
+---
+<h1>Deployments (2) - Updating aplications</h1>
+<h4>Update ReplicaSet template and deleting old Pods</h4>
+<img id="img" src="/images/k8s/update-changing-rs-image.jpg" />
+<style>
+    #img {
+        margin-top: 1em;
+        width: 70%;
+        height: 70%;
+    }
+</style>
+---
+<h1>Deployments (3) - Updating aplications</h1>
+<h4>Blue-Green deployment</h4>
+<img id="img" src="/images/k8s/blue-green.jpg" />
+<style>
+    #img {
+        margin-top: 1em;
+        width: 70%;
+        height: 70%;
+    }
+</style>
+---
+<h1>Deployments (4) - Updating aplications</h1>
+<h4>Rolling update (Zero downtime)</h4>
+<img id="img" src="/images/k8s/rolling-update.jpg" />
+<style>
+    #img {
+        margin-top: 1em;
+        width: 70%;
+        height: 70%;
     }
 </style>
 
-
-
-
-
-
-
-
-
-
-
 ---
+<h1>Deployments (5) - yaml</h1>
+<split-view>
+    <img id="img" src="/images/k8s/deployment-single.jpg" />
+    <source-code
+        folder="k8s"
+        files="deployment.yaml service.yaml"
+        start-lines="2,14;7"
+        end-lines="2,15;8"
+    ></source-code>
+</split-view>
+<style>
+    #img {
+        margin-top: 12em;
+        margin-left: 1em;
+        width: 90%;
+        height: 20%;
+    }
+</style>
+---
+<h1>Deployments (6) - yaml</h1>
+<split-view>
+    <div>
+        <h4><em>#creating the deployment#</em></h4>
+        <h4>kubectl create -f deployment.yaml --record</h4>
+        <img id="img" src="/images/k8s/deployment-single.jpg" />
+        <br /><br /><br />
+        <h4><em>#Checking the status#</em></h4>
+        <h4>kubectl rollout status deployment front</h4>
+    </div>
+    <web-term path="k8s"></web-term>
+</split-view>
+<style>
+    h4:first-of-type {
+        margin-top: 4em;
+    }
+</style>
+---
+<h1>
+    Deployments (7) - update to new version (kubectl apply -f deployment.yaml)
+</h1>
+<split-view>
+    <web-term path="k8s"></web-term>
+</split-view>
+---
+<h1>
+    Deployments (8)
+</h1>
+<split-view>
+    <div>
+        <h4><em>#history#</em></h4>
+        <h4>kubectl rollout history deployment front</h4>
+        <h4><em>#rollback#</em></h4>
+        <h4>kubectl rollout undo deployment front</h4>
+        <h4><em>#rollback to revision#</em></h4>
+        <h4>kubectl rollout undo deployment front --to-revision=1</h4>
+    </div>
+    <web-term path="k8s"></web-term>
+</split-view>
+<style>
+    h4:first-of-type {
+        margin-top: 4em;
+    }
+</style>
+---
+<h1>
+    Deployments (9)
+</h1>
+<img id="img" src="/images/k8s/rs-revisions.jpg" />
+<style>
+    #img {
+        margin-top: 12em;
+        margin-left: 1em;
+        width: 90%;
+        height: 40%;
+    }
+</style>
+---
+<div>
+    <img src="/images/helm/helm-logo.png" />
+</div>
+<style>
+    img {
+        margin-top: 5em;
+        width: 40%;
+        height: 40%;
+    }
+</style>
+
+--- ---
 <h1>Snapshot</h1>
 
 <img src="/images/bazel.png" />
