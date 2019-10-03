@@ -1,8 +1,25 @@
-<br /><br /><br /><br /><br /><br /><br />
-<h2><em>/* Release and Deploy */</em></h2>
-<h2>
-    Containers - Kubernetes - Helm - Jenkins(2/X)
-</h2>
+<div class="section" id="section1">
+    <h2><em>/* Releasing and Deployment */</em></h2>
+</div>
+<img id="globant" src="/images/Globant.png" />
+<div id="author"><em2>@author</em2> michael.nieto@globant.com</div>
+<style>
+    #section1 {
+        height: 90%;
+        text-align: center;
+        display: table;
+        width: 100%;
+    }
+
+    #section1 h2 {
+        display: table-cell;
+        vertical-align: middle;
+        font-size: 5em;
+    }
+    em2 {
+        color: #fb94ff;
+    }
+</style>
 ---
 <h1>Agenda</h1>
 <img src="/images/agenda/agenda1.png" />
@@ -118,7 +135,7 @@
 <h1>Containers - cgroups(2) - test.sh</h1>
 
 <split-view>
-    <div>
+    <div id="section">
         <h4><em>#create a cgroup foo#</em></h4>
         <h4>cgcreate -g memory:foo</h4>
         <h4><em>#assign 50000 of memory#</em></h4>
@@ -126,7 +143,7 @@
             echo 50000 | tee /sys/fs/cgroup/memory/foo/memory.limit_in_bytes
         </h4>
         <h4><em>#check the allocation#</em></h4>
-        <h4>cat /sys/fs/cgroup/memory/foo/memory.limit_in_bytes</h4>
+        <h4>cat /sys/fs/cgroup/memory/foo/memory. limit_in_bytes</h4>
         <h4><em>#execute the process#</em></h4>
         <h4>cgexec -g memory:foo ./test.sh</h4>
         <h4><em>#delete the cgroup</em></h4>
@@ -135,6 +152,12 @@
 
     <web-term path="sources"></web-term>
 </split-view>
+<style>
+    h4 {
+        word-wrap: break-word;
+        font-size: 1.95vw;
+    }
+</style>
 ---
 <h1>Containers - Union File Systems (1)</h1>
 <br /><br /><br /><br /><br /><br /><br /><br />

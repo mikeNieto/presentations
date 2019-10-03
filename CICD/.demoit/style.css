@@ -13,7 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-
+@import url("https://fonts.googleapis.com/css?family=Fira+Mono&display=swap");
 html,
 body,
 #top {
@@ -31,7 +31,7 @@ html {
 }
 
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: "Fira Mono", monospace;
     color: var(--color-text);
     display: flex;
     align-items: center;
@@ -136,5 +136,21 @@ em {
     right: 1vw;
     bottom: 1vw;
     width: 15vw;
+    height: auto;
+}
+
+#globant {
+    position: absolute;
+    left: 1vw;
+    bottom: 1vw;
+    width: 15vw;
+    height: auto;
+}
+
+#author {
+    position: absolute;
+    right: 2vw;
+    bottom: 1vw;
+    width: 20vw;
     height: auto;
 }
