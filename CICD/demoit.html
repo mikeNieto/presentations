@@ -4,6 +4,9 @@
 <img id="globant" src="/images/Globant.png" />
 <div id="author"><em2>@author</em2> michael.nieto@globant.com</div>
 <style>
+    body {
+        font-family: "Fira Mono", monospace;
+    }
     #section1 {
         height: 90%;
         text-align: center;
@@ -40,10 +43,6 @@
         height: 20%;
     }
 </style>
----
-<h2>Containers</h2>
-<h2><em>Docker</em></h2>
-
 ---
 <h1>Docker</h1>
 <img src="/images/containers/architecture-docker-components.png" />
@@ -191,6 +190,12 @@
 
     <web-term path="/ufiles"></web-term>
 </split-view>
+<style>
+    h4 {
+        word-wrap: break-word;
+        font-size: 1.95vw;
+    }
+</style>
 ---
 <h1>Agenda</h1>
 <img src="/images/agenda/agenda3.png" />
@@ -278,6 +283,11 @@
 <h3>
     sudo cp minikube /usr/local/bin && rm minikube
 </h3>
+<style>
+    h3 {
+        word-wrap: break-word;
+    }
+</style>
 
 ---
 
@@ -293,7 +303,7 @@
 <split-view>
     <web-term path=""></web-term>
     <web-browser
-        src="http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/http:kubernetes-dashboard:/proxy/"
+        src="http://127.0.0.1:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/overview?namespace=default"
     ></web-browser>
 </split-view>
 

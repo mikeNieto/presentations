@@ -31,7 +31,7 @@ html {
 }
 
 body {
-    font-family: "Fira Mono", monospace;
+    font-family: "Montserrat", sans-serif;
     color: var(--color-text);
     display: flex;
     align-items: center;
