@@ -234,7 +234,7 @@
 </style>
 
 ---
-<h1>Components</h1>
+<h1>k8s Components</h1>
 
 <img id="img" src="/images/k8s/k8s-components.jpg" />
 <style>
@@ -291,13 +291,15 @@
 
 ---
 
-<h1>Starting minikube locally -> "minikube start --vm-driver=none"</h1>
+<h1>
+    Starting minikube locally -> "minikube start --vm-driver=none
+    --kubernetes-version v1.15.0"
+</h1>
 <split-view>
     <web-term path=""></web-term>
 </split-view>
 
 ---
-
 <h1>Minikube dashboard -> "kubectl proxy"</h1>
 
 <split-view>
@@ -595,6 +597,18 @@
     }
 </style>
 ---
+<h1>k8s Components</h1>
+
+<img id="img" src="/images/k8s/k8s-components.jpg" />
+<style>
+    #img {
+        margin-top: 5em;
+        width: 80%;
+        height: 65%;
+    }
+</style>
+
+---
 <h1>Agenda</h1>
 <img src="/images/agenda/agenda4.png" />
 <style>
@@ -617,7 +631,104 @@
         margin-top: 0;
     }
 </style>
+---
+<h1>What is Helm?</h1>
+<div>
+    <h3>
+        Helm helps you manage Kubernetes applications — Helm Charts help you
+        define, install, and upgrade even the most complex Kubernetes
+        application.
+    </h3>
+    <br />
+    <h3>
+        Charts are easy to create, version, share, and publish — so start using
+        Helm and stop the copy-and-paste.
+    </h3>
+</div>
+<style>
+    div {
+        margin: 0 auto;
+        width: 90%;
+    }
+    h3 {
+        word-wrap: break-word;
+    }
+</style>
+---
+<h1>Architecture</h1>
+<img src="/images/helm/architecture.jpeg" />
+---
+<h1>Installing Helm</h1>
+<div>
+    <h4><em>#download helm package#</em></h4>
+    <h4>https://get.helm.sh/helm-v2.14.3-linux-amd64.tar.gz</h4>
+    <h4><em>#unpack it#</em></h4>
+    <h4>tar -zxvf helm-v2.14.3-linux-amd64.tar.gz</h4>
+    <h4><em>#move helm binary to bin destination#</em></h4>
+    <h4>mv linux-amd64/helm /usr/local/bin/helm</h4>
+    <h4><em>#initialize Helm#</em></h4>
+    <h4>helm init</h4>
+</div>
+<style>
+    h4:first-of-type {
+        margin-top: 4em;
+    }
+    #img {
+        margin-left: 1em;
+        width: 90%;
+        height: 20%;
+    }
+</style>
 
+---
+<h1>Where to get Charts?</h1>
+<div id="url">https://hub.helm.sh</div>
+<style>
+    #url {
+        margin-top: 5em;
+        width: 95%;
+        font-size: 4em;
+    }
+</style>
+---
+<h1>Installing MySQL over k8s</h1>
+<split-view>
+    <web-term path=""></web-term>
+    <web-browser
+        src="http://127.0.0.1:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/overview?namespace=default"
+    ></web-browser>
+</split-view>
+---
+<h1>Installing Jenkins over k8s</h1>
+<split-view>
+    <source-code
+        folder="jenkins"
+        files="values.yaml jenkins-slave/Dockerfile"
+        start-lines="3;"
+        end-lines="4;"
+    >
+    </source-code>
+</split-view>
+---
+<h1>Installing Jenkins over k8s (2)</h1>
+<split-view>
+    <div>
+        <h4>
+            helm install --name jenkins-cicd -f values.yaml --namespace jenkins
+            stable/jenkins
+        </h4>
+        <web-term path="jenkins"></web-term>
+    </div>
+
+    <web-browser
+        src="http://127.0.0.1:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/overview?namespace=default"
+    ></web-browser>
+</split-view>
+<style>
+    web-term {
+        height: 85%;
+    }
+</style>
 ---
 <h1>Agenda</h1>
 <img src="/images/agenda/agenda5.png" />
@@ -638,7 +749,7 @@
         height: 20%;
     }
 </style>
---- ---
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 <h1>Snapshot</h1>
 
 <img src="/images/bazel.png" />
