@@ -1,5 +1,5 @@
 <div class="section" id="section1">
-    <h2><em>/* Releasing and Deployment */</em></h2>
+    <h2><em>/* Releasing, Deploying and Monitoring */</em></h2>
 </div>
 <img id="globant" src="/images/Globant.png" />
 <div id="author"><em2>@author</em2> michael.nieto@globant.com</div>
@@ -28,7 +28,7 @@
 <img src="/images/agenda/agenda1.png" />
 <style>
     img {
-        margin-top: 13em;
+        margin-top: 10em;
         width: 70%;
         height: 40%;
     }
@@ -70,7 +70,7 @@
 ---
 
 <h1>Containers</h1>
-<h2>What is a <em>container</em>?</h2>
+<h2>What a <em>container</em> is ?</h2>
 
 ---
 
@@ -100,7 +100,7 @@
 </style>
 
 ---
-<h1>Containers - nameservers</h1>
+<h1>Containers - namespaces</h1>
 
 <split-view>
     <div>
@@ -142,7 +142,7 @@
             echo 50000 | tee /sys/fs/cgroup/memory/foo/memory.limit_in_bytes
         </h4>
         <h4><em>#check the allocation#</em></h4>
-        <h4>cat /sys/fs/cgroup/memory/foo/memory. limit_in_bytes</h4>
+        <h4>cat /sys/fs/cgroup/memory/foo/memory.limit_in_bytes</h4>
         <h4><em>#execute the process#</em></h4>
         <h4>cgexec -g memory:foo ./test.sh</h4>
         <h4><em>#delete the cgroup</em></h4>
@@ -194,6 +194,30 @@
     h4 {
         word-wrap: break-word;
         font-size: 1.95vw;
+    }
+</style>
+---
+<h1>Container - Technical recap</h1>
+
+<div>
+    <ul>
+        <li>namespaces - visibility (pid)</li>
+        <li>cgroups - control groups (resources)</li>
+        <li>union filesystem - data</li>
+        <li>seccomp - security profiles</li>
+    </ul>
+</div>
+<style>
+    div {
+        margin-left: auto;
+        margin-right: auto;
+        display: table;
+    }
+    li {
+        text-align: left;
+    }
+    ul {
+        margin-top: 3em;
     }
 </style>
 ---
@@ -454,9 +478,9 @@
 <img id="img" src="/images/k8s/ingress.jpg" />
 <style>
     #img {
-        margin-top: 1em;
+        margin-top: 5em;
         width: 80%;
-        height: 70%;
+        height: 50%;
     }
 </style>
 ---
@@ -704,8 +728,8 @@
     <source-code
         folder="jenkins"
         files="values.yaml jenkins-slave/Dockerfile"
-        start-lines="3;"
-        end-lines="4;"
+        start-lines="14;"
+        end-lines="15;"
     >
     </source-code>
 </split-view>
@@ -737,6 +761,71 @@
         margin-top: 15em;
         width: 50%;
         height: 20%;
+    }
+</style>
+---
+<h1>Jenkins Pipelines</h1>
+<div>
+    <h3>
+        Jenkins Pipeline is a suite of plugins which supports implementing and
+        integrating continuous delivery pipelines into Jenkins.
+    </h3>
+    <br />
+    <h3>
+        A continuous delivery (CD) pipeline is an automated expression of your
+        process for getting software from version control right through to your
+        users and customers.
+    </h3>
+</div>
+<style>
+    div {
+        margin: 0 auto;
+        width: 90%;
+    }
+    h3 {
+        word-wrap: break-word;
+    }
+</style>
+---
+<h1>Jenkins Pipelines (2)</h1>
+<split-view>
+    <div>
+        <h3>
+            Creating a pipeline with Github...
+        </h3>
+    </div>
+
+    <web-browser
+        src="http://127.0.0.1:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/overview?namespace=default"
+    ></web-browser>
+</split-view>
+<style>
+    div {
+        margin: 0 auto;
+        width: 90%;
+    }
+    h3 {
+        word-wrap: break-word;
+    }
+</style>
+---
+<h1>Monitoring</h1>
+<split-view>
+    <div>
+        <h4>
+            minikube addons list
+        </h4>
+        <h4>
+            minikube addons open heapster
+        </h4>
+        <web-term path="jenkins"></web-term>
+    </div>
+
+    <web-browser src="http://"></web-browser>
+</split-view>
+<style>
+    web-term {
+        height: 80%;
     }
 </style>
 ---
