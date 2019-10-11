@@ -39,6 +39,11 @@ ENV PATH=$PATH:$GRADLE_HOME/bin
 RUN gradle --stop
 
 # COPYING CURRENT KUBECTL CONFIG
-ADD .kube ${HOME}/.kube
-ADD .minikube ${HOME}/.minikube
+ADD .kube/config ${HOME}/.kube/config
+ADD .minikube/ca.crt ${HOME}/.minikube/ca.crt
+ADD .minikube/ca.key ${HOME}/.minikube/ca.key
+ADD .minikube/client.crt ${HOME}/.minikube/client.crt
+ADD .minikube/client.key ${HOME}/.minikube/client.key
+
+
 
