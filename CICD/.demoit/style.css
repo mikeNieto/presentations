@@ -154,3 +154,12 @@ em {
     width: 20vw;
     height: auto;
 }
+
+#mike {
+    position: absolute;
+    right: 1vw;
+    bottom: 1vw;
+    width: 15vw;
+    height: auto;
+    border-radius: 30%;
+}
