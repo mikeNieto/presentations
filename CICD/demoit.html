@@ -849,7 +849,7 @@
 </split-view>
 <style>
     web-term {
-        height: 80%;
+        height: 82%;
     }
 </style>
 ---
@@ -886,6 +886,33 @@
 </style>
 
 ---
+<h1>Jenkins X - Creating a new microservice</h1>
+<split-view>
+    <div>
+        <h4><em>#container with GKE#</em></h4>
+        <h4>gcloud auth login</h4>
+        <h4>jx init</h4>
+        <br />
+        <h4><em>#create a MS from a template#</em></h4>
+        <h4>jx create quickstart</h4>
+        <h4><em>#checking pipelines in console#</em></h4>
+        <h4>jx get pipelines</h4>
+        <h4><em>#list applications#</em></h4>
+        <h4>jx get applications</h4>
+        <br />
+        <h4><em>#Create a DevPod#</em></h4>
+        <h4>jx create devpod</h4>
+    </div>
+
+    <web-term path="/jenkinsx"></web-term>
+</split-view>
+<style>
+    h4 {
+        word-wrap: break-word;
+        font-size: 1.95vw;
+    }
+</style>
+---
 <h1>Agenda</h1>
 <img src="/images/agenda/agenda6.png" />
 <style>
@@ -895,91 +922,81 @@
         height: 20%;
     }
 </style>
---- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
-<h1>Snapshot</h1>
-
-<img src="/images/bazel.png" />
-<img id="qr" src="/qrcode?url=https://bazel.build/" />
+---
+<h1>Conclusion</h1>
+<img src="/images/devops_wallofconfusion.gif" />
+<style>
+    img {
+        margin-top: 1em;
+        width: 80%;
+        height: 80%;
+    }
+</style>
+---
+<h1>Conclusion 2</h1>
+<img src="/images/monolithic-vs-microservices.png" />
+<style>
+    img {
+        margin-top: 1em;
+        width: 70%;
+        height: 70%;
+    }
+</style>
 
 ---
-
-<h1>Terminal</h1>
-
+<h1>Bibliography</h1>
 <split-view>
-    <web-term path="folder"></web-term>
+    <img src="/images/Kubernetes-IA.png" />
+    <div>
+        <h4><em>#Docker#</em></h4>
+        <h4>
+            https://jvns.ca/blog/2016/10/10/what-even-is-a-container/
+            https://www.linuxjournal.com/content/everything-you-need-know-about-linux-containers-part-i-linux-control-groups-and-process
+            https://blog.yadutaf.fr/2014/05/29/introduction-to-seccomp-bpf-linux-syscall-filter/
+            https://www.terriblecode.com/blog/how-docker-images-work-union-file-systems-for-dummies/
+        </h4>
+        <h4><em>#Google Cloud Platform#</em></h4>
+        <h4>
+            https://medium.com/nycdev/deploy-to-a-managed-kubernetes-cluster-on-google-cloud-894d35b83619
+        </h4>
+    </div>
 </split-view>
-
----
-
-<h1>
-    Shell &amp; Browser -
-    <strong>Type `python -m SimpleHTTPServer` in the shell window</strong>
-</h1>
-
-<split-view>
-    <web-term path="folder"></web-term>
-    <web-browser src="http://"></web-browser>
-</split-view>
-
----
-<h1>
-    Browser
-</h1>
-
-<split-view>
-    <web-browser src="https://www.google.com/search?igu=1"></web-browser>
-</split-view>
-
----
-<script src="/js/draw.js"></script>
-<h1>Code samples</h1>
-
-<split-view>
-    <web-term path="folder"></web-term>
-    <source-code
-        folder="sources"
-        files="main.go pod.yaml"
-        start-lines="26;18,21"
-        end-lines="27;18,22"
-    >
-    </source-code>
-</split-view>
-
----
-
-<h1>Draw on slides</h1>
-
-<p>
-    On the left border of the page there's a pen that can be used to draw on the
-    slides. Type <em>&lt;ESC&gt;</em> to exit draw mode.
-</p>
-
-<img src="/images/bazel.png" />
-<script src="/js/draw.js"></script>
 
 <style>
     img {
-        height: 75%;
+        margin-top: 1em;
+        margin-left: 12em;
+        width: 50%;
+        height: 80%;
+    }
+    div {
+        margin-left: -5em;
+    }
+    split-view {
+        margin-top: 5em;
     }
 </style>
-
 ---
-<h1>Video</h1>
-<video controls>
-    <source src="/images/video/test.mp4" type="video/mp4" />
-</video>
+<h1>Where to learn about k8s?</h1>
+<div>
+    <h3>
+        https://www.katacoda.com/courses/kubernetes
+    </h3>
+</div>
 <style>
-    video {
-        width: 70%;
+    div {
+        margin-top: 20em;
+        width: 100%;
+    }
+    h3 {
+        word-wrap: break-word;
     }
 </style>
-
 ---
-<h1>Github Gist iframe</h1>
-<iframe
-    frameborder="0"
-    style="min-width: 200px; width: 60%; height: 460px;"
-    scrolling="no"
-    seamless="seamless"
-    srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 400px; }</style><script src="https://gist.github.com/sundbry/55bb902b66a39c0ff83629d9a8015ca4.js"></script></body></html>'
-></iframe>
+<img src="/images/thank-you.gif" />
+<style>
+    img {
+        width: 100%;
+        height: 100%;
+    }
+</style>
