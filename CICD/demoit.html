@@ -1,5 +1,10 @@
 <div class="section" id="section1">
-    <h2><em>/* Releasing, Deploying and Monitoring */</em></h2>
+    <h2>
+        <em
+            >/* Releasing, Deploying and <br />
+            Monitoring */</em
+        >
+    </h2>
 </div>
 <img id="globant" src="/images/Globant.png" />
 <div id="author"><em2>@author</em2> michael.nieto@globant.com</div>
@@ -48,7 +53,16 @@
         height: 80%;
     }
 </style>
-
+---
+<h1>Objective 2</h1>
+<img src="/images/devops_wallofconfusion.gif" />
+<style>
+    img {
+        margin-top: 1em;
+        width: 80%;
+        height: 80%;
+    }
+</style>
 ---
 <h1>Agenda</h1>
 <img src="/images/agenda/agenda1.png" />
@@ -136,7 +150,7 @@
 <split-view>
     <div>
         <br /><br /><br />
-        <h4><em>#Creating a isolated process#</em></h4>
+        <h4><em>#Creating an isolated process#</em></h4>
         <h4>unshare --fork --pid --mount-proc bash</h4>
     </div>
     <web-term path="sources"></web-term>
@@ -176,7 +190,7 @@
         <h4>cat /sys/fs/cgroup/memory/foo/memory.limit_in_bytes</h4>
         <h4><em>#execute the process#</em></h4>
         <h4>cgexec -g memory:foo ./test.sh</h4>
-        <h4><em>#delete the cgroup</em></h4>
+        <h4><em>#delete the cgroup#</em></h4>
         <h4>cgdelete memory:foo</h4>
     </div>
 
@@ -215,7 +229,7 @@
         </h4>
         <h4><em>#Umount the overlay#</em></h4>
         <h4>sudo umount overlay</h4>
-        <h4><em>#remoe all#</em></h4>
+        <h4><em>#remove all#</em></h4>
         <h4>rm -Rf base diff overlay workdir</h4>
     </div>
 
@@ -637,7 +651,7 @@
 </style>
 ---
 <h1>
-    Deployments (7) - update to new version (kubectl apply -f deployment.yaml)
+    Deployments (7) - update to a new version (kubectl apply -f deployment.yaml)
 </h1>
 <split-view>
     <web-term path="k8s"></web-term>
@@ -931,7 +945,7 @@
         <h4><em>#list applications#</em></h4>
         <h4>jx get applications</h4>
         <br />
-        <h4><em>#Create a DevPod#</em></h4>
+        <h4><em>#create a DevPod#</em></h4>
         <h4>jx create devpod</h4>
     </div>
 
@@ -965,12 +979,12 @@
 </style>
 ---
 <h1>Conclusion 2</h1>
-<img src="/images/monolithic-vs-microservices.png" />
+<img src="/images/devops_wallofconfusion_down.jpg" />
 <style>
     img {
         margin-top: 1em;
-        width: 70%;
-        height: 70%;
+        width: 80%;
+        height: 80%;
     }
 </style>
 
